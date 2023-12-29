@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Shooter</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: url("space.jpg") center/cover;
+      }
+
+      #board {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        border: 2px solid white;
+        background-color: black;
+        overflow: hidden;
+      }
+
+      #rocket {
+        position: absolute;
+        width: 10vw;
+        height: 10vw;
+        background: url("rocket2.jfif") center/contain no-repeat;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+      }
+
+      .bullets {
+        position: absolute;
+        bottom: 10vw;
+        left: 50%;
+        width: 7vw;
+        height: 6vw;
+        background: url("bullet2.png") center/contain no-repeat;
+        z-index: 10;
+        transform: translateX(-50%);
+      }
+
+      .rocks {
+        position: absolute;
+        top: 0;
+        width: 15vw;
+        height: 15vw;
+        background: url("rock1.jfif") center/contain no-repeat;
+      }
+
+      #score {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 2em;
+        color: white;
+      }
+
+      .arrow-buttons {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+      }
+
+      .arrow-button {
+        font-size: 1.5em;
+        padding: 10px;
+        margin: 0 5px;
+      }
+
+      #shootButton {
+        font-size: 1.5em;
+        padding: 10px;
+        margin-top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    </style>
+    <script src="js.js" defer></script>
+  </head>
+  <body>
+    <div id="board">
+      <div class="rocks"></div>
+      <div id="rocket"></div>
+    </div>
+    <div id="score">0</div>
+    <div class="arrow-buttons">
+      <button class="arrow-button" id="leftButton">Left</button>
+      <button class="arrow-button" id="rightButton">Right</button>
+    </div>
+    <button id="shootButton">Shoot</button>
+  </body>
+</html>
